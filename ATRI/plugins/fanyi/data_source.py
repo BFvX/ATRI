@@ -12,13 +12,13 @@ async def get_translated_text(text: str) -> str:
 	sign = appid + text + salt + secretkey
 	sign = hashlib.md5(sign.encode('utf-8')).hexdigest()
 	
-	langid_dict={'zh':'中文', 'en':'英文', 'ja':'日文'}
+	langid_dict={'zh':'中文', 'en':'英文', 'ja':'日文', 'jp':'日文'}
 	#别的语言？在写了再写了.jpg
 	if cla=='zh':
 		ori='zh'; tra='en'
 	else:
 		if cla=='ja':
-			ori='ja'
+			ori='jp'
 		else:
 			ori='en'
 		tra='zh'
