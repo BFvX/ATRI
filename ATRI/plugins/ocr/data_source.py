@@ -36,13 +36,13 @@ async def ocr_translated_text(pic_url, user_info):
 	salt = str(random.randint(32768, 65536))
 	sign = appid + sentence + salt + secretkey
 	sign = hashlib.md5(sign.encode('utf-8')).hexdigest()
-	langid_dict={'zh':'中文', 'en':'英文', 'ja':'日文'}
+	langid_dict={'zh':'中文', 'en':'英文', 'ja':'日文', 'jp':'日文'}
 	
 	if cla=='zh':
 		ori='zh'; tra='en'
 	else:
 		if cla=='ja':
-			ori='ja'
+			ori='jp'
 		else:
 			ori='en'
 		tra='zh'
